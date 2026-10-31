@@ -4,7 +4,7 @@ import type { SakuraConfig } from "../types/effectsConfig";
 
 export const sakuraConfig: SakuraConfig = {
 	// 是否启用樱花特效
-	enable: false,
+	enable: true,
 
 	// 樱花数量
 	sakuraNum: 21,
@@ -23,9 +23,9 @@ export const sakuraConfig: SakuraConfig = {
 	// 樱花不透明度
 	opacity: {
 		// 樱花最小不透明度
-		min: 0.3,
+		min: 0.1,
 		// 樱花最大不透明度
-		max: 0.9,
+		max: 0.5,
 	},
 
 	// 樱花移动速度

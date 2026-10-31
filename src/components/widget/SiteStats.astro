@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import WidgetLayout from "@/components/common/WidgetLayout.astro";
-import { siteConfig } from "@/config";
+import { licenseConfig, siteConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { WidgetComponentConfig } from "@/types/config";
@@ -69,7 +69,7 @@ const lastActivityDate = posts.reduce<Date | null>((latest, post) => {
 const lastPostDate = lastActivityDate ? lastActivityDate.toISOString() : null;
 
 const todayText = i18n(I18nKey.today);
-
+const licenseName = licenseConfig.enable ? licenseConfig.name : "None";
 const stats = [
 	{
 		icon: "material-symbols:article-outline",
@@ -108,6 +108,11 @@ const stats = [
 		dynamic: true,
 		id: "last-update",
 	},
+  {
+    icon: "material-symbols:copyright-outline",
+		label: i18n(I18nKey.siteInfoLicense),
+		value: licenseName,
+  }
 ];
 ---
 
@@ -125,7 +130,7 @@ const stats = [
         </div>
         <div class="flex items-center">
           <span
-            class="text-base font-bold text-neutral-900 dark:text-neutral-100"
+            class="text-sm font-bold text-neutral-900 dark:text-neutral-100"
             data-stat-id={stat.id}
           >
             {stat.formatted ? formatNumber(stat.value) : stat.value}
