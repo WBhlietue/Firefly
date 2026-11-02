@@ -1,28 +1,27 @@
 ---
-title: Firefly 一款清新美观的 Astro 博客主题模板
+title: Firefly — цэвэрхэн гоёмсог Astro блогын загвар
 published: 1970-01-02
 pinned: true
-description: Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
-tags: [Markdown, Firefly, 博客, 主题, 模板]
-category: 文章示例
+description: Firefly нь Astro framework болон Fuwari загвар дээр суурилсан, цэвэрхэн гоёмсог, орчин үеийн хувийн блогын загвар бөгөөд технологийн сонирхогчид болон контент бүтээгчдэд зориулагдсан. Энэхүү загвар нь орчин үеийн вэб технологийн стекүүдийг нэгтгэж, баялаг функцын модулиуд болон өндөр тохируулах боломжтой интерфэйсийг санал болгосноор та мэргэжлийн, гоёмсог хувийн блогыг хялбархан бүтээх боломжтой.
+tags: [Markdown, Firefly, Блог, Загвар, Template]
+category: Өгүүллийн жишээ
 image: ./images/firefly2.avif
 slug: firefly
-series: "Firefly 功能示例"
+series: "Firefly функцын жишээ"
 seriesOrder: 4
 ---
 
-## 🌟 项目概述
+## 🌟 Төслийн тойм
 
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+**Firefly** нь Astro framework болон Fuwari загвар дээр суурилсан, цэвэрхэн гоёмсог, орчин үеийн хувийн блогын загвар бөгөөд технологийн сонирхогчид болон контент бүтээгчдэд зориулагдсан. Энэхүү загвар нь орчин үеийн вэб технологийн стекүүдийг нэгтгэж, баялаг функцын модулиуд болон өндөр тохируулах боломжтой интерфэйсийг санал болгосноор та мэргэжлийн, гоёмсог хувийн блогыг хялбархан бүтээх боломжтой.
 
+**🖥️ Онлайн үзлэг: [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
 
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
+**📝 Firefly-ийн хэрэглээний баримт: [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
 
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
+**⭐ Firefly-ийн нээлттэй эх код: [https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)**
 
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
-
-**⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
+**⭐ Fuwari-ийн нээлттэй эх код: [https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
 
 ::github{repo="CuteLeaf/Firefly"}
 
@@ -31,14 +30,14 @@ seriesOrder: 4
 ![Firefly](./images/1.avif)
 
 
-## 🚀 技术架构
+## 🚀 Техникийн архитектур
 
-- **静态站点生成**: 基于 Astro ，提供极快的加载速度和优秀的 SEO 优化
-- **TypeScript 支持**: 完整的类型安全，提升开发体验和代码质量
-- **响应式设计**: 使用 Tailwind CSS 构建，完美适配桌面端和移动端
-- **组件化开发**: 支持 Astro、Svelte 组件，灵活可扩展
+- **Статик сайт үүсгэх**: Astro дээр суурилсан тул маш хурдан ачаалалт болон SEO-ийн сайн оновчлолыг санал болгоно
+- **TypeScript дэмжлэг**: Бүрэн type safety нь хөгжүүлэлтийн туршлага болон кодын чанарыг дээшлүүлнэ
+- **Responsive загвар**: Tailwind CSS ашиглан бүтээсэн тул десктоп болон мобайлд төгс зохицно
+- **Компонентчилсэн хөгжүүлэлт**: Astro, Svelte компонентуудыг дэмжих тул уян хатан өргөтгөх боломжтой
 
 
-## 📖 配置说明
+## 📖 Тохиргооны тайлбар
 
-> 📚 **详细配置文档**: 查看 [Firefly 使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南
+> 📚 **Дэлгэрэнгүй тохиргооны баримт**: Бүрэн тохиргооны гарын авлагыг [Firefly хэрэглээний баримт](https://docs-firefly.cuteleaf.cn/)-аас үзнэ үү

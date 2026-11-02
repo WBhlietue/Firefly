@@ -1,170 +1,170 @@
 ---
-title: Markdown 扩展功能
+title: Markdown өргөтгөсөн функцууд
 published: 1970-01-01
 updated: 1970-01-01
-description: "了解 Firefly 中的 Markdown 功能"
+description: "Firefly дахь Markdown функцуудтай танилцана уу"
 image: ""
-tags: [演示, 示例, Markdown, Firefly]
-category: "文章示例"
+tags: [Жишээ, Демо, Markdown, Firefly]
+category: "Өгүүллийн жишээ"
 slug: markdown-extended
-series: "Firefly 功能示例2"
+series: "Firefly функцын жишээ2"
 seriesOrder: 2
 ---
 
-## GitHub 仓库卡片
+## GitHub репозиторийн карт
 
-您可以添加链接到 GitHub 仓库的动态卡片，在页面加载时，仓库信息会从 GitHub API 获取。
+Та GitHub репозиторид холбогдсон динамик карт нэмж болох бөгөөд хуудас ачаалагдах үед репозиторийн мэдээлэл GitHub API-аас татагдана.
 
 ::github{repo="CuteLeaf/Firefly"}
 
-使用代码 `::github{repo="CuteLeaf/Firefly"}` 创建 GitHub 仓库卡片。
+`::github{repo="CuteLeaf/Firefly"}` кодыг ашиглан GitHub репозиторийн карт үүсгэнэ.
 
 ```markdown
 ::github{repo="CuteLeaf/Firefly"}
 ```
 
-## 提醒框(Admonitions)配置
+## Анхааруулах хайрцаг (Admonitions) тохиргоо
 
-Firefly 采用了 [rehype-callouts](https://github.com/lin-stephanie/rehype-callouts) 插件，支持了四种风格的提醒框主题：`GitHub`、`Obsidian`、`VitePress` 和 `Docusaurus`。您可以在 `src/config/siteConfig.ts` 中进行配置：
+Firefly нь [rehype-callouts](https://github.com/lin-stephanie/rehype-callouts) плагиныг ашиглах бөгөөд `GitHub`、`Obsidian`、`VitePress` болон `Docusaurus` гэсэн дөрвөн хэв маягийн сэдвийг дэмжинэ. Та `src/config/siteConfig.ts` дотор тохируулж болно:
 
 ```typescript
 // src/config/siteConfig.ts
 export const siteConfig: SiteConfig = {
   // ...
   rehypeCallouts: {
-    // 选项: "github" | "obsidian" | "vitepress" | "docusaurus"
+    // Сонголт: "github" | "obsidian" | "vitepress" | "docusaurus"
     theme: "github",
   },
   // ...
 };
 ```
 
-注意：**更改配置后需要重启开发服务器才能生效。**
+Анхаар: **Тохиргоог өөрчилсний дараа хөгжүүлэлтийн серверийг дахин эхлүүлснээр хүчин төгөлдөр болно.**
 
-以下是各个主题支持的类型列表，每个主题风格和语法不同，可根据喜好选择。
+Доорх нь сэдэв бүрийн дэмждэг төрлүүдийн жагсаалт бөгөөд сэдэв бүрийн хэв маяг, синтакс ялгаатай тул хүслээрээ сонгоно уу.
 
-### 1. GitHub 主题风格
+### 1. GitHub хэв маяг
 
-这是 GitHub 官方支持的 5 种基本类型。
+Энэ нь GitHub-ийн албан ёсоор дэмждэг 5 үндсэн төрөл юм.
 
 ![GitHub](./images/github.avif)
 
-**基本语法**
+**Үндсэн синтакс**
 
 ```markdown
 > [!NOTE] NOTE
-> 突出显示用户应该考虑的信息。
+> Хэрэглэгчийн анхаарах ёстой мэдээллийг онцлон харуулна.
 
 > [!TIP] TIP
-> 可选信息，帮助用户更成功。
+> Хэрэглэгчид илүү амжилттай ажиллахад туслах нэмэлт мэдээлэл.
 
 > [!IMPORTANT] IMPORTANT
-> 用户成功所必需的关键信息。
+> Хэрэглэгчийн амжилтад зайлшгүй шаардлагатай чухал мэдээлэл.
 
 > [!WARNING] WARNING
-> 关键内容，需要立即注意。
+> Яаралтай анхаарал шаардсан чухал агуулга.
 
 > [!CAUTION] CAUTION
-> 行动的负面潜在后果。
+> Үйлдлийн сөрөг болзошгүй үр дагавар.
 
-> [!NOTE] 自定义标题
-> 这是一个带有自定义标题的示例。
+> [!NOTE] Гарын үсгийн гарчиг
+> Энэ бол өөрийн гарчигтай жишээ юм.
 ```
 
 ---
 
-### 2. Obsidian 主题风格
+### 2. Obsidian хэв маяг
 
-[Obsidian](https://obsidian.md/) 风格支持非常丰富的类型和别名。
+[Obsidian](https://obsidian.md/) хэв маяг нь маш баялаг төрөл болон alias-г дэмжинэ.
 
 <details>
-<summary>点击展开 Obsidian 语法列表</summary>
+<summary>Obsidian синтаксийн жагсаалтыг дарж нээх</summary>
 
 ```markdown
 
 > [!NOTE] NOTE
-> 通用的笔记块。
+> Ерөнхий тэмдэглэлийн блок.
 
 > [!ABSTRACT] ABSTRACT
-> 文章的摘要。
+> Өгүүллийн хураангуй.
 
 > [!SUMMARY] SUMMARY
-> 文章的总结（同 Abstract）。
+> Өгүүллийн дүгнэлт (Abstract-тай ижил).
 
 > [!TLDR] TLDR
-> 太长不看（同 Abstract）。
+> Хэт урт, уншихгүй (Abstract-тай ижил).
 
 > [!INFO] INFO
-> 提供额外信息。
+> Нэмэлт мэдээлэл өгнө.
 
 > [!TODO] TODO
-> 需要完成的事项。
+> Гүйцэтгэх ёстой зүйлс.
 
 > [!TIP] TIP
-> 实用技巧或提示。
+> Хэрэгтэй арга эсвэл зөвлөмж.
 
 > [!HINT] HINT
-> 暗示（同 Tip）。
+> Илрүүлэг (Tip-тэй ижил).
 
 > [!IMPORTANT] IMPORTANT
-> 重要信息（Obsidian 风格通常使用类似的图标）。
+> Чухал мэдээлэл (Obsidian хэв маягт ихэвчлэн ижил төстэй icon ашигладаг).
 
 > [!SUCCESS] SUCCESS
-> 操作成功。
+> Үйлдэл амжилттай.
 
 > [!CHECK] CHECK
-> 检查通过（同 Success）。
+> Шалгалт давсан (Success-тай ижил).
 
 > [!DONE] DONE
-> 已完成（同 Success）。
+> Дууссан (Success-тай ижил).
 
 > [!QUESTION] QUESTION
-> 提出问题。
+> Асуулт тавьсан.
 
 > [!HELP] HELP
-> 寻求帮助（同 Question）。
+> Тусламж хүссэн (Question-той ижил).
 
 > [!FAQ] FAQ
-> 常见问题（同 Question）。
+> Түгээмэл асуулт (Question-той ижил).
 
 > [!WARNING] WARNING
-> 警告信息。
+> Анхааруулах мэдээлэл.
 
 > [!CAUTION] CAUTION
-> 注意事项（同 Warning）。
+> Анхаарах зүйл (Warning-той ижил).
 
 > [!ATTENTION] ATTENTION
-> 引起注意（同 Warning）。
+> Анхаарал татсан (Warning-той ижил).
 
 > [!FAILURE] FAILURE
-> 操作失败。
+> Үйлдэл бүтэлгүйтсэн.
 
 > [!FAIL] FAIL
-> 失败（同 Failure）。
+> Бүтэлгүйтэл (Failure-тай ижил).
 
 > [!MISSING] MISSING
-> 缺失内容（同 Failure）。
+> Дутуу агуулга (Failure-тай ижил).
 
 > [!DANGER] DANGER
-> 危险操作警告。
+> Аюултай үйлдлийн анхааруулга.
 
 > [!ERROR] ERROR
-> 错误信息（同 Danger）。
+> Алдааны мэдээлэл (Danger-тай ижил).
 
 > [!BUG] BUG
-> 报告软件缺陷。
+> Програм хангамжийн алдаа мэдээлэх.
 
 > [!EXAMPLE] EXAMPLE
-> 展示一个例子。
+> Жишээ харуулах.
 
 > [!QUOTE] QUOTE
-> 引用一段话。
+> Нэг хэсэг ишлэл.
 
 > [!CITE] CITE
-> 引证（同 Quote）。
+> Ишлэл (Quote-той ижил).
 
-> [!NOTE] 自定义标题
-> 这是一个带有自定义标题的示例。
+> [!NOTE] Гарын үсгийн гарчиг
+> Энэ бол өөрийн гарчигтай жишээ юм.
 ```
 </details>
 
@@ -172,31 +172,31 @@ export const siteConfig: SiteConfig = {
 
 ---
 
-### 3. VitePress 主题风格
+### 3. VitePress хэв маяг
 
-[VitePress](https://vitepress.dev/) 风格提供了一套现代化的、扁平的默认样式。目前仅包含与 GitHub 一致的 **5 种** 基础类型。
+[VitePress](https://vitepress.dev/) хэв маяг нь орчин үеийн, хавтгай өгөгдмөл стилийг санал болгоно. Одоогоор зөвхөн GitHub-тай ижил **5** үндсэн төрлийг агуулна.
 
 <details>
-<summary>点击展开 VitePress 语法列表</summary>
+<summary>VitePress синтаксийн жагсаалтыг дарж нээх</summary>
 
 ```markdown
 > [!NOTE] NOTE
-> 对应 GitHub 的 Note。
+> GitHub-ийн Note-той харгалзана.
 
 > [!TIP] TIP
-> 对应 GitHub 的 Tip。
+> GitHub-ийн Tip-той харгалзана.
 
 > [!IMPORTANT] IMPORTANT
-> 对应 GitHub 的 Important。
+> GitHub-ийн Important-той харгалзана.
 
 > [!WARNING] WARNING
-> 对应 GitHub 的 Warning。
+> GitHub-ийн Warning-той харгалзана.
 
 > [!CAUTION] CAUTION
-> 对应 GitHub 的 Caution。
+> GitHub-ийн Caution-той харгалзана.
 
-> [!TIP] 自定义标题
-> VitePress 风格同样支持自定义标题。
+> [!TIP] Гарын үсгийн гарчиг
+> VitePress хэв маяг ч мөн өөрийн гарчигийг дэмжинэ.
 ```
 </details>
 
@@ -204,38 +204,38 @@ export const siteConfig: SiteConfig = {
 
 ---
 
-### 4. Docusaurus 主题风格
+### 4. Docusaurus хэв маяг
 
-[Docusaurus](https://docusaurus.io/docs/markdown-features/admonitions) 风格提供了一套现代化的提醒框样式，支持 5 种类型。
+[Docusaurus](https://docusaurus.io/docs/markdown-features/admonitions) хэв маяг нь орчин үеийн анхааруулах хайрцгийн стилийг санал болгож, 5 төрлийг дэмжинэ.
 
 <details>
-<summary>点击展开 Docusaurus 语法列表 </summary>
+<summary>Docusaurus синтаксийн жагсаалтыг дарж нээх</summary>
 
-支持以下类型的提醒框：`note` `tip` `info` `warning` `danger`
+Дараах төрлийн анхааруулах хайрцгийг дэмжинэ: `note` `tip` `info` `warning` `danger`
 
 ```markdown
 :::note
-突出显示用户应该考虑的信息，即使在快速浏览时也是如此。
+Хэрэглэгчийн анхаарах ёстой мэдээллийг хурдан харж байсан ч ойлгомжтой байдлаар онцлон харуулна.
 :::
 
 :::tip
-可选信息，帮助用户更成功。
+Хэрэглэгчид илүү амжилттай ажиллахад туслах нэмэлт мэдээлэл.
 :::
 
 :::info
-一般信息。
+Ерөнхий мэдээлэл.
 :::
 
 :::warning
-由于潜在风险需要用户立即注意的关键内容。
+Болзошгүй эрсдэлийн улмаас яаралтай анхаарал шаардсан чухал агуулга.
 :::
 
 :::danger
-行动的负面潜在后果。
+Үйлдлийн сөрөг болзошгүй үр дагавар.
 :::
 
-:::tip[自定义标题]
-可选信息，帮助用户更成功。
+:::tip[Гарын үсгийн гарчиг]
+Хэрэглэгчид илүү амжилттай ажиллахад туслах нэмэлт мэдээлэл.
 :::
 ```
 
@@ -245,37 +245,37 @@ export const siteConfig: SiteConfig = {
 
 ---
 
-## 剧透
+## Спойлер
 
-您可以为文本添加剧透。文本也支持 **Markdown** 语法。
+Та текстэд спойлер нэмж болно. Текст нь **Markdown** синтаксийг ч дэмжинэ.
 
-内容 :spoiler[被隐藏了 **哈哈**]！
+Агуулга :spoiler[нуугдсан **ха-ха**]!
 
 ```markdown
-内容 :spoiler[被隐藏了 **哈哈**]！
+Агуулга :spoiler[нуугдсан **ха-ха**]!
 ```
 
-## 图片画廊网格 (Image Grid)
+## Зургийн grid (Image Grid)
 
-您可以使用 `[grid]` 和 `[/grid]` 标签将多张图片纵向并排展示。这对于展示照片画廊或对比图非常有用。系统会自动根据包裹在其中的图片数量（最多支持并排展示4张）以响应式网格进行布局。
+`[grid]` болон `[/grid]` шошгыг ашиглан олон зургийг босоогоор зэрэгцүүлэн харуулж болно. Энэ нь зургийн цуглуулга эсвэл харьцуулах зураг харуулахад маш тохиромжтой. Систем нь дотор нь хүрээлэгдсэн зургийн тоогоор (нэг мөрөнд дээд тал нь 4 зураг) responsive grid байрлалыг автоматаар тохируулна.
 
-**自动补齐图片高度：** 同一排中如果有高度、大小或者比例不一的图片，会像「九宫格画廊相册」一样自动撑满。较短或不协调的图片会自动使用 object-cover 进行完美中心裁剪补充视野。图片边框水平彻底对齐无缝隙，但被裁剪后，只有点击图片通过灯箱才能查看完整图片，所以建议尽量避免使用长宽比例不一致的图片在同一排中。
+**Зургийн өндрийг автоматаар дүүргэх:** Нэг мөрөнд өндөр, хэмжээ эсвэл харьцаа нь ялгаатай зургууд байвал «9 нүхтэй цомог» шиг автоматаар дүүрнэ. Богино эсвэл зохицохгүй зургуудыг object-cover ашиглан төгс голлосон crop-аар харах талбарыг нөхнө. Зургийн хүрээ хэвтээгээр яг зэрэгцэж зайгүй болох боловч crop хийгдсэн тул зөвхөн зураг дээр дарж lightbox-оор бүтэн зургийг үзэх боломжтой тул нэг мөрөнд өөр өөр харьцаатай зургийг ашиглахгүй байхыг зөвлөж байна.
 
-**图注恒定底端对齐：** 不论上面的图片长宽如何变化，在同一行的所有图像解释文字（图注）都会对标到一条完美的水平基线上了。
+**Тайлбар үргэлж доод талд тэгшлэгдэнэ:** Дээрх зургийн өндөр, өргөн хэрхэн өөрчлөгдсөн ч нэг мөрөнд байгаа бүх зургийн тайлбар текст нь төгс хэвтээ суурь шугамд тэгшлэгдэнэ.
 
 [grid]
-![示例图片一](./images/firefly1.avif)
-![示例图片二](./images/firefly2.avif)
-![示例图片二](./images/firefly3.avif)
+![Жишээ зураг нэг](./images/firefly1.avif)
+![Жишээ зураг хоёр](./images/firefly2.avif)
+![Жишээ зураг хоёр](./images/firefly3.avif)
 [/grid]
 
-**基本语法**
+**Үндсэн синтакс**
 
 ```markdown
 [grid]
-![示例图片一](./images/firefly1.avif)
-![示例图片二](./images/firefly2.avif)
-![示例图片二](./images/firefly3.avif)
+![Жишээ зураг нэг](./images/firefly1.avif)
+![Жишээ зураг хоёр](./images/firefly2.avif)
+![Жишээ зураг хоёр](./images/firefly3.avif)
 [/grid]
 ```
 

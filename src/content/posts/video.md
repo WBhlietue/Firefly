@@ -1,19 +1,19 @@
 ---
-title: 在文章中嵌入视频
+title: Өгүүлэлд бичлэг суулгах
 published: 1970-01-01
-description: 这篇文章演示如何在博客文章中嵌入视频。
-tags: [示例, 视频, Firefly]
-category: 文章示例
+description: Энэ өгүүлэл блогон өгүүлэлд бичлэг суулгах аргыг танилцуулна.
+tags: [Жишээ, Бичлэг, Firefly]
+category: Өгүүллийн жишээ
 slug: video
-series: "Firefly 功能示例"
+series: "Firefly функцын жишээ"
 seriesOrder: 5
 ---
 
-只需从 YouTube 或其他平台复制嵌入代码，然后将其粘贴到 markdown 文件中。
+YouTube болон бусад платформоос суулгах кодыг хуулж аваад markdown файлд шууд буулгахад л болно.
 
 ```yaml
 ---
-title: 在文章中嵌入视频
+title: Өгүүлэлд бичлэг суулгах
 published: 2023-10-19
 // ...
 ---
